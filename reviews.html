@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
+        integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.min.js"
+        integrity="sha384-VHvPCCyXqtD5DqJeNxl2dtTyhF78xXNXdkwX1CZeRusQfRKp+tA7hAShOK/B/fQ2"
+        crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/6b99eaf61d.js" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    
+    <link rel="icon" type="image/x-icon" href="img/favicon1.ico">
+    <title>Reviews</title>
+</head>
+<body class="container-fluid">
+    <button onclick="toTop()" id="toTopBtn" title="Go to top">⩓</button>
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="navbar-brand">
+            <a href="index.html"><img src="img/H-removebg-preview.png"></a>
+        </div>
+        <div class="navbar-nav mr-auto" id="help">HELP</div>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navb" aria-controls="navb"
+            aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navb">
+            <ul class=" row navbar-nav ml-auto">
+                <li class="nav-item" data-toggle="tooltip" data-placement="top" title="Visit Home page"><a class="nav-link"
+                        href="index.html">Home</a></li>
+                <li class="nav-item" data-toggle="tooltip" data-placement="top" title="Visit Reviews page"><a
+                        class="nav-link" href="reviews.html">Reviews</a></li>
+                <li class="nav-item" data-toggle="tooltip" data-placement="top" title="Visit About page"><a class="nav-link"
+                        href="about.html">About</a></li>
+                <li><a id="login" class="nav-link" style="cursor: pointer;" onclick="openModal('lgmodal')">Sign in</a></li>
+                <li><a id="login" class="nav-link" style="cursor: pointer;" onclick="openModal('rgmodal')">Sign up</a></li>
+                <div id="lgmodal" class="modal">
+                    <form class="modal-content animate center container-fluid">
+                        <div class="container" style="padding: 0;">
+                            <div class="modal-header container-fluid row">
+                                <h2 style="padding: 10px 10px;">Sign In</h2>
+                                <span onclick="closeModal('lgmodal')" class="close">&times;
+                                </span>
+                            </div>
+                            <div class="container" style="padding: 15px;">
+                                <label for="uname"><b>Username</b></label>
+                                <input type="text" placeholder="Enter Username" name="uname" required>
+                                <label for="psw"><b>Password</b></label>
+                                <input type="password" placeholder="Enter Password" name="psw" required>
+                                <button type="submit">Sign in</button>
+                            </div>
+                        </div>
+                        <div class="container-fluid modal-footer">
+                            <div class="container" style="padding: 0;">
+                                <span style="padding: 10px 10px;" style="float: left;">Forgot <text
+                                        onclick=" closeModal('lgmodal');openModal('fgpass');">password?</text></span>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div id="fgpass" class="modal">
+                    <form class="modal-content center container-fluid">
+                        <div class="container" style="padding: 0;">
+                            <div class="modal-header container-fluid row">
+                                <h2 style="padding: 10px 10px;">Restore password</h2>
+                                <span onclick="closeModal('fgpass')" class="close">&times;
+                                </span>
+                            </div>
+                            <div class="container" style="padding: 15px;">
+                                <label for="email"><b>E-mail</b></label>
+                                <input type="email" placeholder="E-mail" name="e-mail" required>
+                                <label><b>Username</b></label>
+                                <input id="TxfUname" type="text" placeholder="Username" name="uname" required>
+                                <button type="submit">Confirm</button>
+                            </div>
+                        </div>
+                        <div class="container-fluid modal-footer">
+                            <div class="container" style="padding: 0;">
+                                <span style="padding: 10px 10px;" style="float: left;">Verification email will be
+                                    sent</span>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </ul>
+        </div>
+        <div id="rgmodal" class="modal">
+            <form class="modal-content animate center container-fluid" style="width: 700px;">
+                <div class="container" style="padding: 0;">
+                    <div class="modal-header container-fluid ">
+                        <h2 style="padding: 10px 10px;">Sign Up</h2>
+                        <span onclick="closeModal('rgmodal')" class="close">&times;
+                        </span>
+                    </div>
+                    <div class="container" style="padding: 15px;">
+                        <label for="email"><b>E-mail</b></label>
+                        <input type="email" placeholder="Enter E-mail" name="e-mail" required>
+                        <label><b>Username</b></label>
+                        <input id="TxfUname" type="text" placeholder="Create new Username" name="uname" required>
+                        <label><b>Password</b></label>
+                        <input id="TxfPass" type="password" placeholder="Create new Password" name="psw" required>
+                        <button type="submit">Sign up</button>
+                    </div>
+                </div>
+                <div class="container-fluid modal-footer">
+                    <div class="container" style="padding: 0;">
+                        <span style="padding: 10px 10px;" style="float: left;">Already <text
+                                onclick=" closeModal('rgmodal');openModal('lgmodal');">signed up?</text></span>
+                    </div>
+                </div>
+            </form>
+        </div>
+        </ul>
+        </div>
+    </nav>
+    <main>
+        <section class="jiji bg-main">
+            <div class="row">
+                <div class="jiji-left col">
+                    <br>
+                    <p class="text-lg">Reviews from clients</p>
+                </div>
+                <div class="jiji-right">
+                    <img src="img/pic3.png" class="img-fluid" alt="Responsive image">
+                </div>
+            </div>
+        </section>
+        <section class="row">
+                <div class="info-left col-lg-6">
+                    <p class="text-sm">On this page you can get some anonymous feedback from the clients of our organization. Each
+                        opinion is very important for us. Reviews make it easier to understand in which direction the
+                        growth lies. So feel free to share your opinions, it is very much appreciated.</p>
+                </div>
+                <div class="info-right col-lg-6">
+                    <img src="img/feedback-removebg-preview.png" width="200px" class="img-fluid" alt="Responsive image">
+                </div>
+        </section>
+            <section class="container-fluid mb-3 mt-1">
+                <div class="row" style="padding: 0% 20%;">
+                  <div class="card2">
+                    <img src="img/nurlan1.jpg" onmouseover="Big(this)" onmouseout="Norm(this)">
+                  </div>
+                  <div class="card"><p style="float: right;"><em>"After six months of therapy I cured my depression, changed my lifestyle, made progress
+                            at work, thank you very much!"</em></p></div>
+                </div>
+                <br>
+                <div class="row" style="padding: 0% 20%;">
+                    <div class="card2">
+                        <img src="img/hz1.jpg" onmouseover="Big(this)" onmouseout="Norm(this)">
+                    </div>
+                    <div class="card">
+                        <p style="float: right;"><em>"The job people do here is certainly great and gentle, but I believe they need some more young people as
+                        psychologists"</em></p>
+                    </div>
+                </div>
+                <br>
+                <div class="row" style="padding: 0% 20%;">
+                  <div class="card2">
+                    <img class="" src="img/scriptonit1.jpg" onmouseover="Big(this)" onmouseout="Norm(this)">
+                  </div>
+                  <div class="card"><p style="float: right;"><em>"After death of my friend I found this place the greatest for menthal recover. Here I found new friends and
+                daring people"</em></p></div>
+                </div>
+        </section>
+    </main>
+    <footer>
+        <div class="row center">
+            <div class="col-lg-4">
+                <a href="index.html"><img src="img/H-removebg-preview.png" width="130px"></a>
+            </div>
+            <div class="col-lg-4">
+                <a href="">
+                    <h5>Terms & Conditions</h5>
+                </a>
+                <h5>&copy; Copyright 2021</h5>
+            </div>
+            <ul class="col-lg-4 row center pad">
+                <a href="https://www.instagram.com/" class="pad"><i class="fab fa-instagram fa-2x"></i></a>
+                <br>
+                <a href="https://www.facebook.com/" class="pad"><i class="fab fa-facebook fa-2x"></i></a>
+                <a href="https://twitter.com/" class="pad"><i class="fab fa-twitter fa-2x"></i></a>
+            </ul>
+        </div>
+    </footer>
+    <script src="script.js" charset="utf-8"></script>
+    <link rel="stylesheet" href="style.css">
+</body>
+</html>

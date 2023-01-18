@@ -1,0 +1,343 @@
+@import url(utility.css);
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: "Open Sans", sans-serif;
+    text-decoration: none;
+    overflow-y: none;
+}
+html, body {
+  height: 100%;
+  width: 100%;
+  margin: 0%;
+  font-family: "Open Sans", sans-serif;
+}
+a {
+    color: whitesmoke;
+}
+li {
+    list-style: none;
+    margin: 0 15px;
+    position: relative;
+}
+a:hover {
+    color: grey;
+    text-decoration: none;
+}
+text{
+    cursor: pointer;
+}
+footer{
+    background-color: rgb(49, 49, 49);
+    color: whitesmoke;
+    padding: 1% 0%;
+}
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: rgb(255, 255, 255);
+    background-color: rgb(49, 49, 49);
+}
+nav ul  {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+nav ul li {
+    font-size: 18px;
+    padding-bottom: 7px;
+}
+ul li :hover {
+    border-bottom: 2px solid whitesmoke;
+    padding-bottom: 5px;
+
+}
+.landing-left{
+    animation-name: slideRight;
+    animation-duration: 1s;
+    animation-delay: 0.3s;
+    animation-timing-function: ease-out;
+}
+.landing {
+    background-color: rgb(201, 201, 101) ;
+    color: #fefefe;
+    padding: 2% 10%;
+}
+.btn-secondary {
+    background-color: transparent;
+    border: 1px solid #fefefe;
+}
+.btn-secondary:hover {
+    background-color: rgb(49, 49, 49);
+}
+.landing-right .card {
+    color: rgb(131, 145, 52);
+    width: 70%;
+}
+.landing-right {
+    display: flex;
+    justify-content: flex-end;
+    animation-name: slideLeft;
+    animation-duration: 1s;
+    animation-delay: 0.3s;
+    animation-timing-function: ease-out;
+}
+.landing-right img{
+    max-height: 350px;
+    object-fit: scale-down;
+    aspect-ratio: 5/3;
+}
+.landing-left img{
+    max-height: 350px;
+    object-fit: scale-down;
+    aspect-ratio: 5/3;
+}
+.languages h1 {
+    text-align: center;
+    margin: 2% 5%;
+    font-size: 25px;
+}
+.lang-card {
+    max-width: fit-content;
+    padding: 1% 10%; 
+    margin: 1% 10%;
+    justify-content: center;
+}
+.lang-card.a{
+    color: black;
+}
+.lang-card.a:hover{
+    color: rgb(201, 201, 101);
+}
+.languages {
+    animation-name: jump;
+    animation-duration: 1s;
+    animation-delay: 0.3s;
+    animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+.bg-main {
+    background-color: rgb(201, 201, 101);
+}
+.bg-l{
+    background-color: rgb(196, 196, 97);
+}
+.left {
+    color: whitesmoke;
+}
+.right img {
+    max-width: 450px;
+    width: fit-content;
+}
+.left p {
+    margin: 25px 0;
+    font-size: 18px;   
+}
+.btn:hover {
+    transform: scale(0.98);
+}
+.lang-card {
+    transition-timing-function: ease;
+}
+.pic-right {
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+.card1 {
+    margin-bottom: 5%;
+}
+.pic-left img {
+    width:fit-content;
+    padding: 0% 25%;
+}
+.bg-dark {
+    color: whitesmoke;
+}
+.languages .card:hover {
+    transform: translateY(-5px);
+}
+.jiji img {
+    width: 200px;  
+}
+.jiji-right {
+    display: flex;
+    justify-content: flex-end;
+}
+.jiji-left{
+    padding-left: 10%;
+}
+.jiji {
+    color: whitesmoke;
+}
+.info-right {
+    display: flex;
+    justify-content: flex-end;
+    padding: 0% 10%;
+}
+.info-left{
+    padding: 2% 10%;
+}
+.grid-33  {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    grid-gap: 25px;
+}
+.grid-box .card:nth-child(1) {
+    grid-column: 1 / 4;
+}
+.grid-box .card:nth-child(2) {
+    grid-column: 1 / 3;
+}
+.navbar-brand img {
+    margin-left: 7vw;
+    width: 100px;
+    border-radius: 50px;
+}
+#help{
+    font-size: 300%;
+    color: rgb(230, 230, 230);
+}
+.container-fluid{
+    border: 0;
+    padding: 0%;
+}
+.center{
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+}
+.center-notxt{
+    align-items: center;
+    justify-content: center;
+}
+.row{
+    margin: 0% 0%;
+}
+.img-fluid img{
+    padding: 5% 5%;
+}
+.modal {
+  color: rgb(51, 51, 51);
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  overflow: auto;
+  background-color: rgb(0,0,0);
+  background-color: rgba(0,0,0,0.4);
+  padding-top: 60px;
+  border-radius: 10px;
+}
+.modal2 {
+  display: none;
+  padding-top: 135px;
+  top: 0%;
+  left: 0%;
+  position: fixed;
+  z-index: 1000;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgb(0,0,0);
+  background-color: rgba(0,0,0,0.7);
+}
+.modal2-content{
+  margin: auto;
+  display: block;
+  width: 80%;
+  max-width: 1000px;
+}
+.modal button{
+  background-color: rgb(201, 201, 101);
+  color: #fefefe;
+  border-color: #fefefe;
+  border-radius: 5px;
+  width: 65px;
+}
+.modal button:hover{
+    background-color: rgb(49, 49, 49);
+    color: #fefefe;
+}
+.modal-content {
+  background-color: #fefefe;
+  margin: 5px auto;
+  border-radius: 1%;
+  border: 1px solid rgba(0, 0, 0, 0.404);
+  width: 500px;
+}
+.modal.a:hover{
+    color: rgb(49, 49, 49);
+    text-decoration: none;
+}
+.modal-header {
+    color: #fefefe;
+    background-color: rgb(201, 201, 101);
+    display: flex;
+}
+.modal-footer{
+    color: #fefefe;
+    background-color: rgb(201, 201, 101);
+}
+.modal-footer text:hover{
+    color: rgb(99, 99, 99);
+}
+.close {
+  position: relative;
+  right: 25px;
+  top: 0;
+  color: rgb(49, 49, 49);
+  font-size: 35px;
+}
+.close:hover,
+.close:focus {
+  color: rgb(0, 0, 0);
+  cursor: pointer;
+}
+.close2 {
+  position: absolute;
+  right: 25px;
+  top: 0;
+  color: #fefefe;
+  font-size: 50px;
+}
+.close2:hover{
+  color: rgb(116, 116, 116);
+  cursor: pointer;
+}
+.container-nopad{
+    padding: 0% 0%;
+}
+.animate {
+  -webkit-animation: zoom 0.55s;
+  animation: zoom 0.55s
+}
+#toTopBtn {
+    position: fixed;
+    bottom: 20px ;
+    right: 30px;
+    z-index: 2;
+    border-radius: 50%;
+    background-color: rgb(201, 201, 101);
+    color: #fefefe;
+    margin:0px,0px, 30px,0px ;
+    font-size: 25px;
+    height: 55px;
+    width: 55px;
+  }
+
+#toTopBtn:hover {
+  background-color: rgb(110, 110, 110);
+}
+@-webkit-keyframes zoom {
+  from {-webkit-transform: scale(0)}
+  to {-webkit-transform: scale(1)}
+}
+
+@keyframes zoom {
+  from {transform: scale(0)}
+  to {transform: scale(1)}
+}

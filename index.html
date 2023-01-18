@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
+        integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.min.js"
+        integrity="sha384-VHvPCCyXqtD5DqJeNxl2dtTyhF78xXNXdkwX1CZeRusQfRKp+tA7hAShOK/B/fQ2"
+        crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/6b99eaf61d.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/x-icon" href="img/favicon1.ico">
+    <title>Home</title>
+</head>
+
+<body class="container-fluid">
+    <button onclick="toTop()" id="toTopBtn" title="Go to top">⩓</button>
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="navbar-brand">
+            <a href="index.html"><img src="img/H-removebg-preview.png"></a>
+        </div>
+        <div class="navbar-nav mr-auto" id="help">HELP</div>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navb" aria-controls="navb"
+            aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navb">
+            <ul class=" row navbar-nav ml-auto">
+                <li class="nav-item" data-toggle="tooltip" data-placement="top" title="Visit Home page"><a
+                        class="nav-link" href="index.html">Home</a></li>
+                <li class="nav-item" data-toggle="tooltip" data-placement="top" title="Visit Reviews page"><a
+                        class="nav-link" href="reviews.html">Reviews</a></li>
+                <li class="nav-item" data-toggle="tooltip" data-placement="top" title="Visit About page"><a
+                        class="nav-link" href="about.html">About</a></li>
+                <li><a id="login" class="nav-link" style="cursor: pointer;" onclick="openModal('lgmodal')">Sign in</a></li>
+                <li><a id="login" class="nav-link" style="cursor: pointer;" onclick="openModal('rgmodal')">Sign up</a></li>
+                <div id="lgmodal" class="modal">
+                    <form class="modal-content animate center container-fluid">
+                        <div class="container" style="padding: 0;">
+                            <div class="modal-header container-fluid row">
+                                <h2 style="padding: 10px 10px;">Sign In</h2>
+                                <span onclick="closeModal('lgmodal')"
+                                    class="close">&times;
+                                </span>
+                            </div>
+                            <div class="container" style="padding: 15px;">
+                                <label for="uname"><b>Username</b></label>
+                                <input type="text" placeholder="Enter Username" name="uname" required>
+                                <label for="psw"><b>Password</b></label>
+                                <input type="password" placeholder="Enter Password" name="psw" required>
+                                <button type="submit">Sign in</button>
+                            </div>
+                        </div>
+                        <div class="container-fluid modal-footer">
+                            <div class="container" style="padding: 0;">
+                                <span style="padding: 10px 10px;" style="float: left;">Forgot <text onclick=" closeModal('lgmodal');openModal('fgpass');" >password?</text></span>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div id="fgpass" class="modal">
+                    <form class="modal-content animate center container-fluid">
+                        <div class="container" style="padding: 0;">
+                            <div class="modal-header container-fluid row">
+                                <h2 style="padding: 10px 10px;">Restore password</h2>
+                                <span onclick="closeModal('fgpass')" class="close">&times;
+                                </span>
+                            </div>
+                            <div class="container" style="padding: 15px;">
+                                <label for="email"><b>E-mail</b></label>
+                                <input type="email" placeholder="E-mail" name="e-mail" required>
+                                <label><b>Username</b></label>
+                                <input id="TxfUname" type="text" placeholder="Username" name="uname" required>
+                                <button type="submit">Confirm</button>
+                            </div>
+                        </div>
+                        <div class="container-fluid modal-footer">
+                            <div class="container" style="padding: 0;">
+                                <span style="padding: 10px 10px;" style="float: left;">Verification email will be sent</span>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </ul>
+        </div>
+        <div id="rgmodal" class="modal">
+            <form class="modal-content animate center container-fluid" style="width: 700px;">
+                <div class="container" style="padding: 0;">
+                    <div class="modal-header container-fluid ">
+                        <h2 style="padding: 10px 10px;">Sign Up</h2>
+                        <span onclick="closeModal('rgmodal')"
+                            class="close">&times;
+                        </span>
+                    </div>
+                    <div class="container" style="padding: 15px;">
+                        <label for="email"><b>E-mail</b></label>
+                        <input type="email" placeholder="Enter E-mail" name="e-mail" required>
+                        <label><b>Username</b></label>
+                        <input id="TxfUname" type="text" placeholder="Create new Username" name="uname" required>
+                        <label><b>Password</b></label>
+                        <input id="TxfPass" type="password" placeholder="Create new Password" name="psw" required>
+                        <button type="submit">Sign up</button>
+                    </div>
+                </div>
+                <div class="container-fluid modal-footer">
+                    <div class="container" style="padding: 0;">
+                        <span  style="padding: 10px 10px;" style="float: left;">Already <text
+                                onclick=" closeModal('rgmodal');openModal('lgmodal');">signed up?</text></span>
+                    </div>
+                </div>
+            </form>
+        </div>
+        </ul>
+        </div>
+    </nav>
+    <main>
+        <section class="landing">
+            <div class="row ">
+                <div class="landing-left col-lg-7 ">
+                    <h1>What is it?</h1>
+                    <p style="font-size: 20px;">A website which can be your own psychologist. It helps you to cope with difficulties in your
+                        life. You can find a lot of useful tips and solutions for the problems such us depression,
+                        burnout, low self-esteem etc. Furthermore, if you seek proffesional treatment, you can contact
+                        us any time.</p>
+                    <a href="reviews.html" class="btn btn-secondary">Reviews</a>
+                </div>
+                <div class="landing-right col-lg-5">
+                    <div class="card" style="min-width: 270px; max-width: 330px;">
+                        <h3>Contact us</h3>
+                        <p>You can make an appointment for our free consultation. </p>
+                        <input type="text" name="" id="TxfName" placeholder="Name">
+                        <input type="number" name="" id="TxfPhone" placeholder="Phone">
+                        <button onclick="JSalert(document.getElementById('TxfName').value, document.getElementById('TxfPhone').value)" type="Submit" value="Contact" class="btn contact">Contact
+                            us</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="languages mt-2 mb-5">
+            <h1 style="font-size: 44px;">Team of Web developers</h1>
+            <div class="center row">
+                <div id="AigCard" class="card lang-card container-fluid" style="min-width: 350px;">
+                    <img src="img/aruzhan1.jpg" onmouseover="Big(this)" onmouseout="Norm(this)" style="padding-top: 3%;">
+                    <p>Aigerim</p>
+                    <div class="container-fluid modal-footer">
+                        <div class="container-fluid" style="padding: 0%;"><a href="mailto:211390@astanait.edu.kz">Contact
+                                me</a></div>
+                    </div>
+                </div>
+                <div id="AyaCard" class="card lang-card container-fluid" style="min-width: 350px;">
+                    <img src="img/bala1.jpg" style="padding-top: 3%;" onmouseover="Big(this)" onmouseout="Norm(this)">
+                    <p>Ayazhan</p>
+                    <div class="container-fluid modal-footer">
+                        <div class="container-fluid" style="padding: 0%;"><a href="mailto:211355@astanait.edu.kz">Contact
+                                me</a></div>
+                    </div>
+                </div>
+            </div>
+            <div class="row center">
+                <div id="MerCard" class="card lang-card container-fluid" style="min-width: 350px;">
+                    <img src="img/dimash1.jpg" style="padding-top: 3%;" onmouseover="Big(this)" onmouseout="Norm(this)">
+                    <p>Meruert</p>
+                    <div class="container-fluid modal-footer">
+                        <div class="container-fluid" style="padding: 0%;"><a href="mailto:211364@astanait.edu.kz">Contact
+                                me</a></div>
+                    </div>
+                </div>
+                <div id="TamCard" class="card lang-card container-fluid" style="min-width: 350px;">
+                    <img src="img/anya.jpg" style="padding-top: 3%;" onmouseover="Big(this)" onmouseout="Norm(this)">
+                    <p>Tamirlan</p>
+                    <div class="container-fluid modal-footer">
+                        <div class="container-fluid" style="padding: 0%;"><a href="mailto:211383@astanait.edu.kz">Contact
+                                me</a></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="mt-2 bg-l">
+            <div class="row">
+                <div class="left text-center col-lg-6">
+                    <h1 >Organization background</h1>
+                    <p style="font-size: 20px;">Our organization was originally founded in the second half of XX century and since then has
+                        helped lots of people with their menthal problems. You can find more information by pressing
+                        button down below.</p>
+                    <a href="about.html" class="btn btn-secondary">About us</a>
+                </div>
+                <div class="right col-lg-6 center">
+                    <img src="img/psychology-removebg-preview (1).png" class="img-fluid" alt="Responsive image">
+                </div>
+            </div>
+        </section>
+        <section class="row">
+            <div class="pic-left col-lg-6 center">
+                <img src="img/psy.png" class="img-fluid" alt="Responsive image">
+            </div>
+            <div class="pic-right col-lg-6 center-notxt">
+                <div class="card lang-card" style="background-color: rgba(167, 167, 167, 0.295); box-shadow: none;">
+                    <h1>Why menthal problems treatment is important?</h1>
+                </div>
+                <div class="card lang-card" style="background-color: rgba(167, 167, 167, 0.295);">
+                    <p>In the first place, treating psychological problems is important, because it helps to improve
+                        quality of person's life.</p>
+                    <br>
+                    <p>Treating your menthall illnesses may as well positively affect your physical condition, by
+                        improving sleeping habits, the immune system and lower pain levels.</p>
+                    <br>
+                    <p>Having your mental health treated can also improve your productivity, allowing you to focus on
+                        daily tasks and give you the motivation to get things done in a timely manner.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <div class="row center">
+            <div class="col-lg-4">
+                <a href="index.html"><img src="img/H-removebg-preview.png" width="130px"></a>
+            </div>
+            <div class="col-lg-4">
+                <a href="">
+                    <h5>Terms & Conditions</h5>
+                </a>
+                <h5>&copy; Copyright 2021</h5>
+            </div>
+            <ul class="col-lg-4 row center pad">
+                <a href="https://www.instagram.com/" class="pad"><i class="fab fa-instagram fa-2x"></i></a>
+                <br>
+                <a href="https://www.facebook.com/" class="pad"><i class="fab fa-facebook fa-2x"></i></a>
+                <a href="https://twitter.com/" class="pad"><i class="fab fa-twitter fa-2x"></i></a>
+            </ul>
+        </div>
+    </footer>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="script.js" charset="utf-8"></script>
+    <script src="sweetAlert2.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@7.12.15/dist/sweetalert2.all.min.js"></script>
+    <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/sweetalert2@7.12.15/dist/sweetalert2.min.css'>
+</body>
+
+</html>

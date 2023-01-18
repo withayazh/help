@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
+        integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.min.js"
+        integrity="sha384-VHvPCCyXqtD5DqJeNxl2dtTyhF78xXNXdkwX1CZeRusQfRKp+tA7hAShOK/B/fQ2"
+        crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/6b99eaf61d.js" crossorigin="anonymous"></script>
+    
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/x-icon" href="img/favicon1.ico">
+    <title>About</title>
+</head>
+<body>
+    
+    <button onclick="toTop()" id="toTopBtn" title="Go to top">⩓</button>
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="navbar-brand">
+            <a href="index.html"><img src="img/H-removebg-preview.png"></a>
+        </div>
+        <div class="navbar-nav mr-auto" id="help">HELP</div>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navb" aria-controls="navb"
+            aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navb">
+            <ul class=" row navbar-nav ml-auto">
+                <li class="nav-item" data-toggle="tooltip" data-placement="top" title="Visit Home page"><a class="nav-link"
+                        href="index.html">Home</a></li>
+                <li class="nav-item" data-toggle="tooltip" data-placement="top" title="Visit Reviews page"><a
+                        class="nav-link" href="reviews.html">Reviews</a></li>
+                <li class="nav-item" data-toggle="tooltip" data-placement="top" title="Visit About page"><a class="nav-link"
+                        href="about.html">About</a></li>
+                <li><a id="login" class="nav-link" style="cursor: pointer;" onclick="openModal('lgmodal')">Sign in</a></li>
+                <li><a id="login" class="nav-link" style="cursor: pointer;" onclick="openModal('rgmodal')">Sign up</a></li>
+                <div id="lgmodal" class="modal">
+                    <form class="modal-content animate center container-fluid">
+                        <div class="container" style="padding: 0;">
+                            <div class="modal-header container-fluid row">
+                                <h2 style="padding: 10px 10px;">Sign In</h2>
+                                <span onclick="closeModal('lgmodal')" class="close">&times;
+                                </span>
+                            </div>
+                            <div class="container" style="padding: 15px;">
+                                <label for="uname"><b>Username</b></label>
+                                <input type="text" placeholder="Enter Username" name="uname" required>
+                                <label for="psw"><b>Password</b></label>
+                                <input type="password" placeholder="Enter Password" name="psw" required>
+                                <button type="submit">Sign in</button>
+                            </div>
+                        </div>
+                        <div class="container-fluid modal-footer">
+                            <div class="container" style="padding: 0;">
+                                <span style="padding: 10px 10px;" style="float: left;">Forgot <text
+                                        onclick=" closeModal('lgmodal');openModal('fgpass');">password?</text></span>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div id="fgpass" class="modal">
+                    <form class="modal-content animate center container-fluid">
+                        <div class="container" style="padding: 0;">
+                            <div class="modal-header container-fluid row">
+                                <h2 style="padding: 10px 10px;">Restore password</h2>
+                                <span onclick="closeModal('fgpass')" class="close">&times;
+                                </span>
+                            </div>
+                            <div class="container" style="padding: 15px;">
+                                <label for="email"><b>E-mail</b></label>
+                                <input type="email" placeholder="E-mail" name="e-mail" required>
+                                <label><b>Username</b></label>
+                                <input id="TxfUname" type="text" placeholder="Username" name="uname" required>
+                                <button type="submit">Confirm</button>
+                            </div>
+                        </div>
+                        <div class="container-fluid modal-footer">
+                            <div class="container" style="padding: 0;">
+                                <span style="padding: 10px 10px;" style="float: left;">Verification email will be
+                                    sent</span>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </ul>
+        </div>
+        <div id="rgmodal" class="modal">
+            <form class="modal-content animate center container-fluid" style="width: 700px;">
+                <div class="container" style="padding: 0;">
+                    <div class="modal-header container-fluid ">
+                        <h2 style="padding: 10px 10px;">Sign Up</h2>
+                        <span onclick="closeModal('rgmodal')" class="close">&times;
+                        </span>
+                    </div>
+                    <div class="container" style="padding: 15px;">
+                        <label for="email"><b>E-mail</b></label>
+                        <input type="email" placeholder="Enter E-mail" name="e-mail" required>
+                        <label><b>Username</b></label>
+                        <input id="TxfUname" type="text" placeholder="Create new Username" name="uname" required>
+                        <label><b>Password</b></label>
+                        <input id="TxfPass" type="password" placeholder="Create new Password" name="psw" required>
+                        <button type="submit">Sign up</button>
+                    </div>
+                </div>
+                <div class="container-fluid modal-footer">
+                    <div class="container" style="padding: 0;">
+                        <span style="padding: 10px 10px;" style="float: left;">Already <text
+                                onclick=" closeModal('rgmodal');openModal('lgmodal');">signed up?</text></span>
+                    </div>
+                </div>
+            </form>
+        </div>
+        </ul>
+        </div>
+        <div id="fampsy" class="modal2">
+            <span onclick="closeModal('fampsy')" class="close2">&times;</span>
+            <img class="modal2-content" src="img/famous-psychiatrists.jpg">
+        </div>
+        <div id="purpimg" class="modal2">
+            <span onclick="closeModal('purpimg')" class="close2">&times;</span>
+            <img class="modal2-content" src="img/scspsy.jpg">
+        </div>
+    </nav>
+        <section class="landing">
+            <h1 class="landing-left">About us</h1>
+            <div class="row">
+                <div class="landing-left col-lg-6">
+                    <p>Our team of psychologists started working in 1992, in Moscow, Russia. Every piece of information that you
+                        can find on
+                        our website is tested for years.<br>
+                        Our team:
+                        Kuznetsov Timur Grigorievich is the author of the idea and the founder of the project, a psychologist
+                        and a
+                        psychiatrist. Born 1959, in Moscow, Russia. Education: Czechoslovak Academy of Sciences (1990), Charles
+                        University
+                        (1981).
+        
+                        Maria Gennadievna Sergeevna - editor of the English version, psychologist. Born in 1963, in the city of
+                        St. Petersburg.
+                        She is a graduate of St. Petersburg State University.
+        
+                        Alexandra Sergeevna Popova is a psychiatrist . Education: Lomonosov Moscow State University.
+        
+                        Anna Denisovna Nikitchuk is a psychologist . born in 1965. Graduated from the National Research Tomsk
+                        State University.</p>
+                </div>
+                <div class="landing-right col-lg-6">
+                    <img style="cursor: pointer;" src="img/famous-psychiatrists.jpg" class="img-fluid" alt="Responsive image" onclick="openModal('fampsy')">
+                </div>
+            </div>
+        </section>
+        <section class="landing">
+            <h1 class="landing-left">Our purpose</h1>
+            <br>
+            <div class="row ">
+                <div class="landing-left col-lg-6">
+                    <img style="cursor: pointer;" onclick="openModal('purpimg')" src="img/scspsy.jpg" class="img-fluid" alt="Responsive image">
+                </div>
+                <div class="landing-right col-lg-6">
+                    <p></p>
+                    We believe that our work will be able to help people who need support and help. Users who need the advice of
+                    psychologists will be able to easily get them and find a way out of any problem.
+                    Strangely enough, some do not go to psychologists because they consider it a shameful act or they cannot
+                    afford it
+                    financially. We believe that psychological help is needed by everyone, regardless of age and status. That's
+                    why we did a
+                    lot of work on this project, investigated each problem individually and selected the most suitable advice
+                    for all.
+                    Our main goal is to give a person the right path, answer the questions that worry him and prove that there
+                    is support.
+                    If the materials on our site are insufficient but effectively help him, then the user can contact a
+                    psychologist and
+                    take a full-fledged course as a psychologist.
+                    The advantages of our site are that we are updated every day, every hour our site is visited by more than
+                    millions of
+                    people and psychologists. Thus, the best psychologists of the whole planet update the materials of the page
+                    telling us
+                    their ideas and suggestions.
+                </div>
+        
+            </div>
+        </section>
+    <footer>
+        <div class="row center">
+            <div class="col-lg-4">
+                <a href="index.html"><img src="img/H-removebg-preview.png" width="130px"></a>
+            </div>
+            <div class="col-lg-4">
+                <a href="">
+                    <h5>Terms & Conditions</h5>
+                </a>
+                <h5>&copy; Copyright 2021</h5>
+            </div>
+            <ul class="col-lg-4 row center pad">
+                <a href="https://www.instagram.com/" class="pad"><i class="fab fa-instagram fa-2x"></i></a>
+                <br>
+                <a href="https://www.facebook.com/" class="pad"><i class="fab fa-facebook fa-2x"></i></a>
+                <a href="https://twitter.com/" class="pad"><i class="fab fa-twitter fa-2x"></i></a>
+            </ul>
+        </div>
+    </footer>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="script.js" charset="utf-8"></script>
+</body>
+
+</html>
